@@ -3,6 +3,7 @@
     package="com.example.arttherapy1">
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -43,11 +44,26 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".SurveyActivity" />
         </activity>
-        <activity android:name=".AssignmentActivity" />
+        <activity android:name=".AssignmentActivity"
+            android:parentActivityName=".PreAssignmentActivity">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".PreAssignmentActivity" />
+        </activity>
+
+        <activity android:name=".DisplayActivity"
+            android:parentActivityName=".GalleryActivity">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".GalleryActivity" />
+        </activity>
+
         <activity android:name=".CompleteActivity" />
         <activity android:name=".DrawingActivity" />
         <activity android:name=".EmotionsActivity" />
-        <activity android:name=".CameraActivity"></activity>
+        <activity android:name=".CameraActivity" />
     </application>
 
 </manifest>
